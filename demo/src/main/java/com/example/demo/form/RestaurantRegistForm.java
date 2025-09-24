@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class RestaurantRegistForm {
 
-    @Size(min = 1, max = 32, message = "Please enter a store name between 1 and 32 characters.")
+    @Size(min = 1, max = 32, message = "Please enter a restaurant name between 1 and 32 characters.")
     private String restaurantName;
 
     @Size(min = 1, max = 64, message = "Please enter a tagline between 1 and 64 characters.")
