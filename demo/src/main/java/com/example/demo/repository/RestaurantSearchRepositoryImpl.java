@@ -21,23 +21,23 @@ public class RestaurantSearchRepositoryImpl implements RestaurantSearchRepositor
     public List<RestaurantSearchResult> selectByNameWildCard(String restaurantName){
 
         String sql =
-				"SELECT " +
-		        "res.restaurant_id, "+
-				"res.restaurant_name, "+
-		        "res.tagline, " +
-				"COALESCE(COUNT(rev.review_id), 0) number_of_review " +
-		        "FROM " +
-		        "restaurants res "+
-		        "LEFT OUTER JOIN review rev" +
+				"SELECT                                                " +
+		        "res.restaurant_id,                                    " +
+				"res.restaurant_name,                                  " +
+		        "res.tagline,                                          " +
+				"COALESCE(COUNT(rev.review_id), 0) number_of_review    " +
+		        "FROM                                                  " +
+		        "restaurants res                                       " +
+		        "LEFT OUTER JOIN review rev                            " +
 		        "             ON res.restaurant_id = rev.restaurant_id " +
-		        "WHERE " +
-		        "res.restaurant_name LIKE ? " +
-		        "GROUP BY "+
-		        "res.restaurant_id, " +
-		        "res.restaurant_name, " +
-		        "res.tagline " +
-		        "ORDER BY " +
-		        "res.restaurant_id";
+		        "WHERE                                                 " +
+		        "res.restaurant_name LIKE ?                            " +
+		        "GROUP BY                                              " +
+		        "res.restaurant_id,                                    " +
+		        "res.restaurant_name,                                  " +
+		        "res.tagline                                           " +
+		        "ORDER BY                                              " +
+		        "res.restaurant_id                                     " ;
 		
 		String p = "%" + restaurantName + "%";
 		
