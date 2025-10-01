@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Confirm new restaurant registration</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	
+	<h2 class="header">Confirm new restaurant registration</h2>
+	
+	<div th:object="${restaurantRegistForm}">
+		【Restaurant】
+	  <p th:text="*{restaurantName}"></p>
+		【Tagline】<br>
+	  <p th:text="*{tagline}"></p><br>	
+	</div>
+	
+	<form th:action="@{/confirm-restaurant-regist}" method="POST"
+			th:object="${restaurantRegistForm}">
+	    <input type="hidden" th:field="*{restaurantName}">
+	    <input type="hidden" th:field="*{tagline}">
+	    <input type="submit" value="Regist new restaurant" class="btn">
+	</form>
+	
+	<br>
+	
+	<form th:action="@{/restaurant-regist-ret}" method="POST"
+			th:object="${restaurantRegistForm}">
+	   	<input type="hidden" th:field="*{restaurantName}">
+	   	<input type="hidden" th:field="*{tagline}">
+	   	<input type="submit" value="Back" class="btn">
+	  	</form>
+
+</body>
+</html>
