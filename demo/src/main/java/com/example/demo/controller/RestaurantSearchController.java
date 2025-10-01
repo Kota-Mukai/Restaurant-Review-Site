@@ -20,14 +20,14 @@ public class RestaurantSearchController {
 
     private final RestaurantSearchService service;
 
-    @GetMapping("/mt-restaurant-search")
+    @GetMapping("/ad-restaurant-search")
     public String restaurantSearch(
             @ModelAttribute RestaurantSearchForm form){
 
-        return "mt-restaurant-search";
+        return "ad-restaurant-search";
     }
 
-    @PostMapping("/mt-restaurant-search")
+    @PostMapping("/ad-restaurant-search")
     public String showSearchResult(
             @ModelAttribute RestaurantSearchForm form,
             Model model) {
@@ -37,7 +37,7 @@ public class RestaurantSearchController {
 
         model.addAttribute("restaurantList", list);
 
-        return "mt-restaurant-search";
+        return "ad-restaurant-search";
         }
     
 
