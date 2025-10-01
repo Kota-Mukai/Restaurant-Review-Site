@@ -9,7 +9,7 @@
 
 	<h2>Search restaurant</h2>
 	<form th:action="@{/ad-restaurant-search}" method="POST" th:object="${restaurantSearchForm}">
-		【店舗名】（部分一致）<br>
+		【Restaurant name】（partial match）<br>
 	   	<input type="text" th:field="*{restaurantName}"><br>
 		<br>
 	   	<input type="submit" value="Search" class="btn">
