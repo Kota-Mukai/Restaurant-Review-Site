@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Regist new restaurant</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	
+	<h2 class="header">Regist new restaurant</h2>
+	
+	<form th:action="@{/restaurant-regist}" method="POST"
+	        th:object="${restaurantRegistForm}">
+	【Restaurant Name】<br>
+	 <input type="text" th:field="*{restaurantName}"><br>
+     <div th:if="${#fields.hasErrors('restaurantName')}" th:errors="*{restaurantName}" class="error-msg"></div><br>
+    【Tagline】<br>
+     <input type="text" th:field="*{tagline}"><br>
+	 <div th:if="${#fields.hasErrors('tagline')}" th:errors="*{tagline}" class="error-msg"></div><br>
+	 <input type="submit" value="登録" class="btn">
+		
+	</form><br>
+	
+	<a th:href="@{/ad-top}" class="return">Back to admin menu</a>
+	
+</body>
+</html>
