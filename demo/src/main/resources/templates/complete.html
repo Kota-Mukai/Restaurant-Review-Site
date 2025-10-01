@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Process completed</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+		
+	<h2>Process completed</h2>
+
+	<br>
+	<p>The following process has been completed</p>
+	<p th:text="${msg}"></p>
+	<br>
+	<br>
+
+	<a th:href="@{/mt-top}">Back to admin menu</a>
+
+</body>
+</html>
