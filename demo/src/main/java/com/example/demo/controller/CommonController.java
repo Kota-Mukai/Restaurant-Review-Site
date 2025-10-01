@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class CommonController {
 
-    @GetMapping("/mt-top")
+    @GetMapping("/ad-top")
     public String mtTop(){
-        return "mt-top";
+        return "ad-top";
     }
 
     @GetMapping("/complete")
