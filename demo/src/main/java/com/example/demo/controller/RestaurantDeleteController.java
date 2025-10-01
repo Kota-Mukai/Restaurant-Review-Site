@@ -25,7 +25,7 @@ public class RestaurantDeleteController {
             BindingResult result){
 
         if(result.hasErrors()){
-            return "mt-shop-search";
+            return "ad-shop-search";
         }
 
         return "confirm-delete-restaurant";
@@ -39,7 +39,7 @@ public class RestaurantDeleteController {
             RedirectAttributes redirectAttributes){
 
         if(result.hasErrors()) {
-            return "mt-shop-search";
+            return "ad-shop-search";
         }
         
         RestaurantInformation rd = new RestaurantInformation();
