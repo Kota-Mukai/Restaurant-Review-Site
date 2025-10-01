@@ -21,11 +21,6 @@ public class RestaurantRegistController {
 
     private final RestaurantRegistService service;
 
-    @GetMapping("/mt-top")
-    public String mtTop(){
-        return "mt-top";
-    }
-
     @GetMapping("/restaurant-regist")
     public String accessRestaurantRegist(
         @ModelAttribute RestaurantRegistForm form) {
