@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Search restaurant</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+	<h2>Search restaurant</h2>
+	<form th:action="@{/ad-restaurant-search}" method="POST" th:object="${restaurantSearchForm}">
+		【店舗名】（部分一致）<br>
+	   	<input type="text" th:field="*{restaurantName}"><br>
+		<br>
+	   	<input type="submit" value="Search" class="btn">
+	</form>
+
+	<div th:if="${restaurantList} != null">
+		<h2>Search results</h2>
+
+		<table class="restaurant-list">
+			<tr>
+				<th>Edit</th><th>Delete</th><th>ID</th><th>Name</th><th>Tagline</th><th>Number of reviews</th>
+			</tr>
+
+			<tr th:each="restaurant : ${restaurantList}">
+				<td>
+				   <form th:action="@{/show-edit-restaurant-form}" method="POST">
+				      <input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
+				      <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}">
+				      <input type="hidden" name="tagline" th:value="${restaurant.tagline}">
+				      <input type="submit" value="Edit" class="button">
+				   </form>
+				</td>
+				<td>
+					<form th:if="${restaurant.numberOfReview == 0}" th:action="@{/delete-restaurant}" method="POST">
+						<input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
+						<input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}">
+						<input type="hidden" name="tagline" th:value="${restaurant.tagline}">
+						<input type="submit" value="Delete" class="button">
+					</form>
+				</td>
+				<td th:text="${restaurant.restaurantId}"></td>
+				<td th:text="${restaurant.restaurantName}"></td>
+				<td th:text="${restaurant.tagline}"></td>
+				<td th:text="${restaurant.numberOfReview}"></td>
+			</tr>
+
+		</table>
+
+	</div><br>
+	
+	<a th:href="@{/ad-top}" class="return">Back to admin menu</a>
+	
+</body>
+</html>
