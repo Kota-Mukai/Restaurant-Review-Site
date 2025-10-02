@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit restaurant information</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	
+	<h2 class="header">Edit restaurant information</h2>
+	
+	<form th:action="@{/edit-restaurant}" method="POST"
+	        th:object="${restaurantUpdateForm}">
+	   【Restaurant ID】<br>
+	    <p th:text="*{restaurantId}"><p>
+	    <input type="hidden" th:field="*{restaurantId}">
+	    <div th:if="${#fields.hasErrors('restaurantId')}" th:errors="*{restaurantId}" class="error-msg"></div><br>
+	   【Restaurant Name】<br>
+	    <input type="text" th:field="*{restaurantName}"><br>
+        <div th:if="${#fields.hasErrors('restaurantName')}" th:errors="*{restaurantName}" class="error-msg"></div><br>
+       【Tagline】<br>
+        <input type="text" th:field="*{tagline}"><br>
+	    <div th:if="${#fields.hasErrors('tagline')}" th:errors="*{tagline}" class="error-msg"></div><br>
+	    <input type="submit" value="Edit" class="btn">
+		
+	</form><br>
+	
+	<form th:action="@{/ad-restaurant-search}" method="POST"
+	        th:object="${restaurantUpdateForm}">
+		<input type="hidden" th:field="*{restaurantId}">
+		<input type="hidden" th:field="*{restaurantName}">
+		<input type="submit" value="Back" class="button">
+	</form>
+	<br>
+	<a th:href="@{/ad-top}" class="return">Back to admin menu</a>
+	
+</body>
+</html>
