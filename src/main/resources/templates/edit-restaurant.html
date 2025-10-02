@@ -2,23 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>店舗編集</title>
+<title>Edit restaurant information</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 	
-	<h2 class="header">店舗編集</h2>
+	<h2 class="header">Edit restaurant information</h2>
 	
 	<form th:action="@{/edit-restaurant}" method="POST"
 	        th:object="${restaurantUpdateForm}">
-	   【店舗ID】<br>
+	   【Restaurant ID】<br>
 	    <p th:text="*{restaurantId}"><p>
 	    <input type="hidden" th:field="*{restaurantId}">
 	    <div th:if="${#fields.hasErrors('restaurantId')}" th:errors="*{restaurantId}" class="error-msg"></div><br>
-	   【店舗名】<br>
+	   【Restaurant Name】<br>
 	    <input type="text" th:field="*{restaurantName}"><br>
         <div th:if="${#fields.hasErrors('restaurantName')}" th:errors="*{restaurantName}" class="error-msg"></div><br>
-       【キャッチフレーズ】<br>
+       【Tagline】<br>
         <input type="text" th:field="*{tagline}"><br>
 	    <div th:if="${#fields.hasErrors('tagline')}" th:errors="*{tagline}" class="error-msg"></div><br>
 	    <input type="submit" value="Edit" class="btn">
