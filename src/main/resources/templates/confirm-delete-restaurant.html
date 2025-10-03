@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Confirm delete restaurant information</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	
+	<h2 class="header">Confirm delete restaurant information</h2>
+	
+	<div th:object="${restaurantUpdateForm}">
+		【Restaurant ID】
+	  <p th:text="*{restaurantId}"></p>
+		【Restaurant Name】
+	　<p th:text="*{restaurantName}"></p>
+		【Tagline】<br>
+	  <p th:text="*{tagline}"></p><br>	
+	</div>
+	
+	<form th:action="@{/confirm-delete-restaurant}" method="POST"
+			th:object="${restaurantUpdateForm}">
+		<input type="hidden" th:field="*{restaurantId}">	
+	    <input type="hidden" th:field="*{restaurantName}">
+	    <input type="hidden" th:field="*{tagline}">
+	    <input type="submit" value="Delete" class="button">
+	</form>
+	
+	<br>
+	
+	<form th:action="@{/ad-restaurant-search}" method="POST"
+			th:object="${restaurantUpdateForm}">
+		
+		<input type="hidden" th:field="*{restaurantId}">
+	   	<input type="hidden" th:field="*{restaurantName}">
+	   	<input type="submit" value="Back" class="button">
+	  	</form>
+
+</body>
+</html>

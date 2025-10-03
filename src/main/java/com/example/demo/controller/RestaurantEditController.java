@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import javax.naming.Binding;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
