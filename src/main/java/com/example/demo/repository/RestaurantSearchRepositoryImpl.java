@@ -28,7 +28,7 @@ public class RestaurantSearchRepositoryImpl implements RestaurantSearchRepositor
 				"COALESCE(COUNT(rev.review_id), 0) number_of_review    " +
 		        "FROM                                                  " +
 		        "restaurants res                                       " +
-		        "LEFT OUTER JOIN review rev                            " +
+		        "LEFT OUTER JOIN reviews rev                            " +
 		        "             ON res.restaurant_id = rev.restaurant_id " +
 		        "WHERE                                                 " +
 		        "res.restaurant_name LIKE ?                            " +
