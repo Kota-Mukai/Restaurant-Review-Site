@@ -1,23 +1,23 @@
 # Restaurant review site admin tool
-"Restaurant review site admin tool" is an administrative system that allows administrators to register, edit, and delete restaurants on the restaurant review site, as well as search for restaurants within the site.
+"Restaurant review site admin tool" is an administrative system that allows administrators to register, edit, and delete restaurants on the restaurant review site, as well as search for restaurants within the site.  
 You can find the client-side application in my repository under Restaurant-Review-Site-Client-Tool.
 
 # Purpose of creating this tool
 To produce an output as part of learning web application development using Spring Boot.
 
 # Setup
-Maven 4.0.0
-Java 24
-Spring boot 3.5.6
-  (dependencies)
-    ・Spring JDBC
-    ・Thymeleaf
-    ・Validation
-    ・Spring Web
-    ・Spring devtools
-    ・Lombok
-DBeaver 25.2.1
-MySQL Server 8.0
+Maven 4.0.0  
+Java 24  
+Spring boot 3.5.6  
+  (dependencies)  
+    ・Spring JDBC  
+    ・Thymeleaf  
+    ・Validation  
+    ・Spring Web  
+    ・Spring devtools  
+    ・Lombok  
+DBeaver 25.2.1  
+MySQL Server 8.0  
     
 When running this tool in your local enviroment, please use the following SQL statements to create database.
 ```SQL:SQL
