@@ -43,3 +43,11 @@ CREATE TABLE reviews (
   FOREIGN KEY(restaurant_id) REFERENCES restaurants (restaurant_id)
 ):
 ```
+
+And then create an "application.properties" file directly under src/main/resources and write the following content in it.
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/restaurant_db
+spring.datasource.username=your_name
+spring.datasource.password=your_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
